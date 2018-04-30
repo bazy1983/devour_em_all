@@ -10,6 +10,14 @@ var orm = {
         })
     },
 
+    selectOneBurger: function (table, id, callback){
+        let query = "SELECT * FROM ?? WHERE id = ?";
+        connection.query(query, [table, id], function(err, sqlResult){
+            if (err) throw err;
+            callback(sqlResult);
+        })
+    }
+
     // OdrderBurger : function(){
     //     let colVal = {
     //         burger_id = 1

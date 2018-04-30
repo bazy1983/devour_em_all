@@ -18,5 +18,17 @@ module.exports = function (app) {
     app.get("/test", function(req, res){
         res.sendFile(path.join(__dirname, "../public/test.html"))
     })
+
+    app.get("/burger", function(req, res){
+        orm.selectOneBurger("burger_list", req.query.id, function(sqlData){
+         res.send(sqlData);   
+        })
+        
+    })
+
+    app.post ("/order", function(req, res){
+        console.log(req.body);
+        res.send(req.body)
+    })
 }
 

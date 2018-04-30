@@ -1,6 +1,8 @@
 body {
     margin : 0px;
     background: #ECECEC;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .clearfix {
@@ -28,20 +30,46 @@ body {
 
 .burgers {
     margin-top: 10px;
+}
+
+.left{
+    height: 80vh;   
+    float: left;
     width: 30%;
-    height: 80vh;
     overflow: scroll;
 }
 
-.burgers::-webkit-scrollbar {
+.orderAndEat{
+    width: 60vw;
+    height: 36.5vh;
+    float: left;
+    margin-left: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.right{
+    position: relative;
+    width: 0;
+    height: 100%;
+    background: #F4FAFF;
+    transition: 0.5s;
+}
+
+.extendRight{
+    width: 100%;
+}
+
+
+.left::-webkit-scrollbar {
     width: 3px;
 }
  
-.burgers::-webkit-scrollbar-track {
+.left::-webkit-scrollbar-track {
     box-shadow: transparent;
 }
  
-.burgers::-webkit-scrollbar-thumb {
+.left::-webkit-scrollbar-thumb {
   background-color: #FF2847;
   outline: 1px solid slategrey;
 }
@@ -51,13 +79,40 @@ body {
     border-radius: 10px;
     overflow: hidden;
     background: #F4FAFF;
-    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
-.burgerItem img {
+.burgerItem:hover {
+    cursor: pointer;
+}
+
+.burgerItem img, .right img {
     width: 200px;
 }
 
+.right img {
+    display: inline-block;
+}
+
+.right .image {
+    float: left;
+    margin: 0px 15px;
+}
+
+.right .desc {
+    margin-top: 20px;
+    font-size: 22px;
+    padding-right: 10px;
+    font-family: 'Courgette', cursive;
+}
+
+.right i {
+    position: absolute;
+    font-size: 47px;
+    right: 10px;
+    bottom: 10px;
+    color: #388A8C;
+}
 
 .nameCal {
     background: #0A2239;
@@ -65,6 +120,7 @@ body {
     font-family: 'Kaushan Script', cursive;
     padding: 0px 15px;
     color: #FFA69E;
+    height: 70px;
 }
 
 .burgerName {
@@ -73,4 +129,46 @@ body {
 
 .burgerCal {
     float: right;
+}
+
+.burgerDetails{
+    width: 60%;
+    height: 30vh;
+    background: #F4FAFF;
+}
+
+.notification {
+    position: absolute;
+    right: -300px;
+    bottom : 100px;
+    width: 300px;
+    height: 75px;
+    font-size: 26px;
+    background: #0A2239;
+    color : #FFA69E;
+    font-family: 'Courgette', cursive;
+}
+
+.notification p{
+    padding-left: 15px;
+}
+
+
+
+
+
+.slideInOut{
+    animation: slideIO 2s;
+}
+
+@keyframes slideIO {
+    0%, 100%{
+        right : -300px;
+    }
+    20% {
+        right: 0px;
+    }
+    80% {
+        right: 0px;
+    }
 }
