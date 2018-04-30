@@ -1,16 +1,76 @@
-.burger {
-    position: relative;
-    top: 100px;
-    left: 100px;
-    width: 100px;
-    height: 100px;
-    border-top: 3px solid coral;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+body {
+    margin : 0px;
+    background: #ECECEC;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg)
-    }
+.clearfix {
+    clear: both;
+}
+
+.header {
+    margin:0px;
+    padding: 15px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    background: #0A2239;
+    color: #FFA69E;
+}
+
+.header h1 {
+    margin: 0px;
+}
+
+.container {
+    margin: auto;
+    width: 90vw;
+}
+
+.burgers {
+    margin-top: 10px;
+    width: 30%;
+    height: 80vh;
+    overflow: scroll;
+}
+
+.burgers::-webkit-scrollbar {
+    width: 3px;
+}
+ 
+.burgers::-webkit-scrollbar-track {
+    box-shadow: transparent;
+}
+ 
+.burgers::-webkit-scrollbar-thumb {
+  background-color: #FF2847;
+  outline: 1px solid slategrey;
+}
+
+.burgerItem {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #F4FAFF;
+    margin-top: 5px;
+}
+
+.burgerItem img {
+    width: 200px;
+}
+
+
+.nameCal {
+    background: #0A2239;
+    font-size: 21px;
+    font-family: 'Kaushan Script', cursive;
+    padding: 0px 15px;
+    color: #FFA69E;
+}
+
+.burgerName {
+    float: left;
+}
+
+.burgerCal {
+    float: right;
 }

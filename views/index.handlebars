@@ -1,6 +1,10 @@
 {{#each burgers}}
-    <p>{{id}}</p>
-    <p>{{category}}</p>
-    <p>{{name}}</p>
-    <p>{{cal}}</p>
+<div class="burgerItem" value = "{{id}}">
+    <div class="nameCal">
+    <p class = "burgerName">{{name}}</p>
+    <p class = "burgerCal">{{cal}} Cal</p>
+    <div class="clearfix"></div>
+    </div>
+    <img src="{{image}}" alt="{{name}}">
+</div>
 {{/each}}
