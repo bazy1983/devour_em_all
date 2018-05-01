@@ -16,27 +16,33 @@ var orm = {
             if (err) throw err;
             callback(sqlResult);
         })
+    },
+
+    OdrderBurger : function(table, clientData, callback){
+        
+        let sqlQuery = "INSERT INTO ?? SET ?"
+        connection.query(sqlQuery, [table, clientData], function(err, sqlResult){
+            if (err) throw err;
+            callback(sqlResult);
+        })
+    },
+
+    allOrders : function(table, callback){
+        
+        let sqlQuery = "SELECT * FROM ??"
+        connection.query(sqlQuery, table, function(err, sqlResult){
+            if (err) throw err;
+            callback(sqlResult);
+        })
+    },
+
+    devour : function(table, clientData, callback){
+        let sqlQuery = "UPDATE ?? SET ? WHERE ?"
+        connection.query(sqlQuery, [table, {devoured : true}, clientData], function(err, sqlResult){
+            if (err) throw err;
+            callback(sqlResult)
+        })
     }
-
-    // OdrderBurger : function(){
-    //     let colVal = {
-    //         burger_id = 1
-    //     }
-    //     let sqlQuery = "INSERT INTO user_tbl SET ?"
-    //     connection.query(sqlQuery, colVal, function(err, sqlResult){
-    //         if (err) throw err;
-    //     })
-    // },
-
-    // devourBurger : function(){
-    //     let colVal = {
-    //         burger_id = 1
-    //     }
-    //     let sqlQuery = "UPDATE table SET"
-    //     connection.query(sqlQuery, colVal, function(err, sqlResult){
-    //         if (err) throw err;
-    //     })
-    // }
 }
 
 

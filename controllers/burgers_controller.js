@@ -26,9 +26,28 @@ module.exports = function (app) {
         
     })
 
-    app.post ("/order", function(req, res){
-        console.log(req.body);
-        res.send(req.body)
+    app.get("/devour", function(req, res){
+        orm.allOrders ("devour_tbl", function(sqlData){
+            res.send(sqlData);
+        })
     })
+
+    app.post("/order", function(req, res){
+        orm.OdrderBurger("devour_tbl", req.body, function(sqlData){
+            if(sqlData.affectedRows){
+                res.send(req.body);
+            }
+        })
+
+    })
+
+    app.put("/devoured", function(req, res){
+        //something
+        orm.devour("devour_tbl", req.body, function (sqlData) {
+            res.send(req.body)
+            
+        })
+    })
+
 }
 
