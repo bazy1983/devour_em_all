@@ -29,7 +29,7 @@ var orm = {
 
     allOrders : function(table, callback){
         
-        let sqlQuery = "SELECT * FROM ??"
+        let sqlQuery = "SELECT * FROM ?? WHERE DATE(created_at) = curdate()"
         connection.query(sqlQuery, table, function(err, sqlResult){
             if (err) throw err;
             callback(sqlResult);
