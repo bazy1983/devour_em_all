@@ -49,5 +49,17 @@ module.exports = function (app) {
         })
     })
 
+
+    // routes for making new burger
+    app.get("/makeburger", function(req, res){
+        res.render("burger")
+    })
+
+    app.post("/make", function(req, res){
+        orm.makeNewBurger ("burger_list", req.body, function(){
+        })
+        res.status(200).end();
+    })
+
 }
 

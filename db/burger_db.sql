@@ -12,6 +12,17 @@ image VARCHAR (300),
 PRIMARY KEY (id)
 );
 
+CREATE TABLE devour_tbl (
+id INT AUTO_INCREMENT,
+burger_id INT NOT NULL,
+name VARCHAR (100),
+burger_img VARCHAR (300),
+cal INT (5),
+devoured BOOLEAN DEFAULT FALSE,
+created_at TIMESTAMP NOT NULL,
+PRIMARY KEY (id)
+);
+
 
 INSERT INTO burger_list (category , name , description, image, cal) VALUES 
 ("beaf", "Jr. Burger", "A juicy, 100% pure beef patty,  and crinkle-cut pickles with your choice of mustard, mayo or ketchup." , "https://lh3.googleusercontent.com/i-vHb3CryeDkJrTydwmJFJ1M1HrFtjAGIDC5xI7wI7bkOqV_iV0Zpr6jtm-9Lmv6n1pgkMBhJHSb2Ef1XMxLEQ=s400", 250),

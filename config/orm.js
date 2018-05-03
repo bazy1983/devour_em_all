@@ -42,6 +42,14 @@ var orm = {
             if (err) throw err;
             callback(sqlResult)
         })
+    },
+
+    makeNewBurger : function(table, clientData, callback){
+        let sqlQuery = "INSERT INTO ?? SET ?"
+        connection.query(sqlQuery, [table, clientData], function(err, sqlResult){
+            if (err) throw err;
+            callback()
+        })
     }
 }
 
